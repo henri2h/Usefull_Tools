@@ -9,5 +9,14 @@
     <Import_RootNamespace>Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Files.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ErrorManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Network\TCP\Client\Errors\ClientError.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Network\TCP\Client\Errors\CommandError.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Network\TCP\Client\Errors\ConnectionError.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Network\TCP\CommunicationTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Network\TCP\Server\commands\clientCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Network\TCP\Server\commands\commandInterpretor.cs" />
   </ItemGroup>
 </Project>
