@@ -12,7 +12,7 @@ namespace Usefull_Tools
     /// </summary>
     public class Files
     {
-        static string setFDir = null;
+        internal static string setFDir = null;
 
         /// <summary>
         /// fileDirectory used to save the files
@@ -24,7 +24,7 @@ namespace Usefull_Tools
                 if (setFDir == null)
                 {
                     string dir = Environment.CurrentDirectory;
-                    string appData = Path.Combine(Environment.SpecialFolder.ApplicationData.ToString(), "HenriCorp", appName);
+                    string appData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "HenriCorp", Logger.AppName);
 
 
                     if (Files.HasFolderWritePermission(dir))
@@ -34,15 +34,18 @@ namespace Usefull_Tools
                     else if (Files.HasFolderWritePermission(appData))
                     {
                         setFDir = dir;
-
                     }
-                    else setFDir = Path.Combine(Environment.SpecialFolder.ApplicationData.ToString(), "HenriCorp", appName);
+                    else setFDir = appData;
 
                     Directory.CreateDirectory(Files.fileDir);
 
 
                     Files.tempDir = Path.Combine(Files.fileDir, "temp");
-                    System.Console.WriteLine("Loggin destination dir : " + setFDir);
+                    System.Console.WriteLine("Loggin destination dir : " + Path.GetFullPath(setFDir));
+
+                    Directory.CreateDirectory(Files.fileDir);
+                    Directory.CreateDirectory(Files.tempDir);
+
                     return setFDir;
 
                 }
@@ -50,15 +53,6 @@ namespace Usefull_Tools
             }
         }
 
-        /// <summary>
-        /// App name
-        /// </summary>
-        public static string appName
-        {
-            get { return AppName; }
-            set { AppName = value; setFDir = null; }
-        }
-        static string AppName = "app";
 
 
 
@@ -89,8 +83,18 @@ namespace Usefull_Tools
         {
             if (Directory.Exists(Path.Combine(fileDir, dir)) == false) { Directory.CreateDirectory(Path.Combine(fileDir, dir)); }
 
-            File.WriteAllText(Path.Combine(fileDir, dir, fileName), content);
+            saveFile(Path.Combine(fileDir, dir, fileName), content);
         }
+        /// <summary>
+        /// save the file
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="content"></param>
+        public static void saveFile(string path, string content)
+        {
+            File.AppendAllText(path, content + Environment.NewLine);
+        }
+
 
         /// <summary>
         /// Determine if the user has write access to the specified folder : not implemented for the moment
@@ -114,6 +118,7 @@ namespace Usefull_Tools
                         FileSystemAccessRule rights = ((FileSystemAccessRule)rule);
                         if (rights.AccessControlType == AccessControlType.Allow)
                         {
+                            if (rights.FileSystemRights == FileSystemRights.Modify) { return true; }
                             if (rights.FileSystemRights == (rights.FileSystemRights | FileSystemRights.Modify)) return true;
                         }
                     }
@@ -139,12 +144,13 @@ namespace Usefull_Tools
 
             string name = "current";
             int version = 0;
-            while (File.Exists(Path.Combine(directory, name + version + extention)))
+            while (File.Exists(Path.Combine(directory, name + version + extention)) || Directory.Exists(Path.Combine(directory, name + version + extention)))
             {
                 version++;
             }
             return Path.Combine(directory, name + version + extention);
         }
+
 
         /// <summary>
         /// Get a unique path
@@ -159,11 +165,11 @@ namespace Usefull_Tools
             if (Directory.Exists(directory) == false) { Directory.CreateDirectory(directory); }
 
             int version = 0;
-            while (File.Exists(Path.Combine(directory, fileName + version + extention)))
+            while (File.Exists(Path.Combine(directory, fileName + version + extention)) || Directory.Exists(Path.Combine(directory, fileName + version + extention)))
             {
                 version++;
-
             }
+
             return Path.Combine(directory, fileName + version + extention);
         }
 
