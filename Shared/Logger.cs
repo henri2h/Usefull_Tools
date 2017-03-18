@@ -13,7 +13,17 @@ namespace Usefull_Tools
         /// <summary>
         /// App name
         /// </summary>
-        public static string AppName = "App";
+        public static string AppName
+        {
+            get { return appName; }
+            set
+            {
+                appName = value;
+                Files.setFDir = null;
+            }
+        }
+        static string appName = "app";
+
         /// <summary>
         /// is loggin enabled
         /// </summary>
@@ -88,7 +98,8 @@ namespace Usefull_Tools
                 logFile(s2, "errorLog");
                 logFile(s3, "errorLog");
 
-                Files.saveFile(path, data, jsonString);
+                Files.saveFile(path, data);
+                Files.saveFile(path, jsonString);
             }
 
         }
