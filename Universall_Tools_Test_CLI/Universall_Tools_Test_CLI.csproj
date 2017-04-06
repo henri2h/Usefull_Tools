@@ -48,12 +48,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Usefull_Tools_Classic\Usefull_Tools_Classic.csproj">
-      <Project>{aa8e68d6-7410-4286-b1c1-cc64660da92d}</Project>
-      <Name>Usefull_Tools_Classic</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

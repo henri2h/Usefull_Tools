@@ -1,22 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{D92643AF-5A83-4BE6-8608-C5F9486E719D}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Usefull_Tools_.NETCore", "Usefull_Tools_.NETCore\Usefull_Tools_.NETCore.xproj", "{8E75C612-FB0D-420A-8CFF-A2F85AC118A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usefull_Tools_Classic", "Usefull_Tools_Classic\Usefull_Tools_Classic.csproj", "{AA8E68D6-7410-4286-B1C1-CC64660DA92D}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Usefull_Tools_UI", "Usefull_Tools_UI\Usefull_Tools_UI.shproj", "{67264093-B3D5-452B-B2C1-CE08711C456E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universall_Tools_Test_CLI", "Universall_Tools_Test_CLI\Universall_Tools_Test_CLI.csproj", "{F2A82C85-DAE7-4D75-B4C3-7040A04A848A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usefull_Tools_Standard", "Usefull_Tools_Standard\Usefull_Tools_Standard.csproj", "{07479CFA-8616-4DF4-9D0C-FBFCC5ED4D06}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Usefull_Tools_UI\Usefull_Tools_UI.projitems*{67264093-b3d5-452b-b2c1-ce08711c456e}*SharedItemsImports = 13
-		Shared\Shared.projitems*{aa8e68d6-7410-4286-b1c1-cc64660da92d}*SharedItemsImports = 4
 		Shared\Shared.projitems*{d92643af-5a83-4be6-8608-c5f9486e719d}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,14 +27,14 @@ Global
 		{8E75C612-FB0D-420A-8CFF-A2F85AC118A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E75C612-FB0D-420A-8CFF-A2F85AC118A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E75C612-FB0D-420A-8CFF-A2F85AC118A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA8E68D6-7410-4286-B1C1-CC64660DA92D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA8E68D6-7410-4286-B1C1-CC64660DA92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA8E68D6-7410-4286-B1C1-CC64660DA92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA8E68D6-7410-4286-B1C1-CC64660DA92D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F2A82C85-DAE7-4D75-B4C3-7040A04A848A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2A82C85-DAE7-4D75-B4C3-7040A04A848A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2A82C85-DAE7-4D75-B4C3-7040A04A848A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2A82C85-DAE7-4D75-B4C3-7040A04A848A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07479CFA-8616-4DF4-9D0C-FBFCC5ED4D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07479CFA-8616-4DF4-9D0C-FBFCC5ED4D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07479CFA-8616-4DF4-9D0C-FBFCC5ED4D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07479CFA-8616-4DF4-9D0C-FBFCC5ED4D06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
